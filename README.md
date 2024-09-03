@@ -10,14 +10,14 @@ This project was developed as part of the CS Experience Lab at the University of
 
 - **Team Size:** 2 members
 - **Objective:** Implement a Pomodoro timer to help users manage their work and break intervals efficiently.
-- **Technologies Used:** JavaScript, HTML, CSS
+- **Technologies Used:** Angular, FastAPI, Python, HTML, CSS
 - **Agile Practices:** We used a modified Agile approach, breaking our tasks into small, manageable user stories and completing them in 1-week sprints. We conducted daily stand-ups to align on progress and blockers.
 
 ### 2. News Feature
 
 - **Team Size:** 4 members
 - **Objective:** Develop a news aggregation feature that provides users with the latest articles and updates.
-- **Technologies Used:** React, API integration for news sources
+- **Technologies Used:** Angular, Python, SQL, FastAPI, PostgreSQL
 - **Agile Practices:** We continued to use Agile methods, working in 2-week sprints. Our workflow included:
   - **Sprint Planning:** Defined sprint goals, prioritized backlog items, and assigned tasks.
   - **Daily Stand-ups:** Short meetings to discuss progress, challenges, and next steps.
@@ -37,10 +37,12 @@ The underlying open-source repository for this project has been updated and chan
 ## Team Contributions
 
 - **Sprint 1 (Pomodoro Timer):** Designed the user interface and implemented the core timer functionality.
-- **Sprint 2 (Pomodoro Timer Enhancement):** Added custom interval settings and visual cues for work/break periods.
-- **Sprints 3-4 (News Feature):** Integrated news API, created a dynamic UI for displaying articles, and implemented filtering options.
+- **Sprint 2 (Pomodoro Timer Enhancement):** Added custom interval settings and visual cues for work/break periods as well as creating API for CRUD operations.
+- **Sprints 3-4 (News Feature):** Created news API, created a dynamic UI for displaying, creating, reading, and updating articles, and implemented search and filtering options.
 - **Sprint 5 (Refinement and Testing):** Conducted thorough testing, fixed bugs, and optimized performance.
 
 ## Acknowledgements
 
-This project was a part of the CS Experience Lab under the guidance of [Instructor's Name] at UNC Chapel Hill. We are grateful for the support and learning opportunities provided by the lab.
+This project was a part of the COMP 590 course under the guidance of Professor Kris Jordan at UNC Chapel Hill. We are grateful for the support and learning opportunities provided by the lab
+
+![Tech Stack Image] (assests/techstack.png)
