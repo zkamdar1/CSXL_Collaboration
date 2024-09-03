@@ -45,4 +45,6 @@ The underlying open-source repository for this project has been updated and chan
 
 This project was a part of the COMP 590 course under the guidance of Professor Kris Jordan at UNC Chapel Hill. We are grateful for the support and learning opportunities provided by the lab
 
-![Tech Stack Image] (assests/techstack.png)
+## Tech Stack Used
+
+![Tech Stack Image](assets/techstack.png)
