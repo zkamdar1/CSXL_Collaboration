@@ -1,0 +1,29 @@
+<mat-card
+  class="announcements-section"
+  appearance="outlined"
+  [style]="
+    fullWidth
+      ? 'margin: 0 !important;max-width: 100%; padding: 16px; '
+      : 'padding: 16px; margin: 0px;'
+  ">
+  <div *ngIf="showHeader">
+    <div class="list-content">
+    </div>
+    <mat-divider class="list-divider" />
+  </div>
+
+  <p *ngIf="announcementsPerDay.length === 0">No events found!</p>
+
+  <!-- `eventsPerDay` is in the format of a list of tuples, where
+         eventGroup[0] is the date string and eventGroup[1] s a list of events -->
+  <div *ngFor="let announcementGroup of announcementsPerDay" style="padding-bottom: 16px">
+    <mat-card-title>{{ announcementGroup[0] }}</mat-card-title>
+    <mat-divider class="list-announcement-group" />
+    <announcement-card
+      *ngFor="let announcement of announcementGroup[1]"
+      [announcement]="announcement"
+      [disableLink]="disableLinks"
+      [selected]="announcement === selectedAnnouncement"
+      (clicked)="cardClicked.emit(announcement)" />
+  </div>
+</mat-card>

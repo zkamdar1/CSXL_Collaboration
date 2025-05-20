@@ -1,0 +1,77 @@
+<form
+  [formGroup]="announcementForm"
+  (ngSubmit)="onSubmit()"
+  class="form-container">
+  <mat-card class="full-width-card">
+    <mat-card-header>
+      <mat-card-title *ngIf="this.announcement_slug === 'default'; else update">
+        Create Announcement
+      </mat-card-title>
+      <ng-template #update>
+        <mat-card-title> Update Announcement </mat-card-title>
+      </ng-template>
+    </mat-card-header>
+    <mat-card-content class="grid-container">
+      <mat-form-field appearance="outline" color="accent" class="grid-item">
+        <mat-label>Announcement Headline</mat-label>
+        <input
+          matInput
+          placeholder="Enter a compelling title"
+          (change)="generateSlug()"
+          formControlName="headline"
+          required />
+        <mat-hint>Should be short and catchy</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="grid-item">
+        <mat-label>Synopsis</mat-label>
+        <textarea
+          matInput
+          placeholder="Write a brief synopsis"
+          formControlName="synopsis"
+          required></textarea>
+        <mat-hint>Provide a concise summary of the announcement</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="grid-item">
+        <mat-label>Main Story</mat-label>
+        <textarea
+          matInput
+          placeholder="Detail the main content of the announcement"
+          formControlName="main_story"
+          required></textarea>
+        <mat-hint>Full details of your announcement</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="grid-item">
+        <mat-label>Slug</mat-label>
+        <input
+          matInput
+          placeholder="Automatically generated from headline"
+          formControlName="slug" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="grid-item">
+        <mat-label>Organization</mat-label>
+        <input
+          matInput
+          placeholder="Name of the organization or entity"
+          formControlName="organization" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent" class="grid-item">
+        <mat-label>Image URL</mat-label>
+        <input
+          matInput
+          placeholder="URL of the image to display"
+          formControlName="image" />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="action-buttons">
+      <button mat-stroked-button type="button" (click)="onCancel()">
+        CANCEL
+      </button>
+      <button
+        mat-stroked-button
+        type="submit"
+        [disabled]="announcementForm.invalid">
+        SAVE
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

@@ -1,0 +1,54 @@
+/* Ensures padding and borders are included in width/height calculations */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Main container styling */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensure it takes up all the horizontal space */
+  margin: 0 auto; /* Centering the form if needed */
+  padding: 20px;
+}
+
+/* Card styling to ensure it takes full available width */
+.full-width-card {
+  width: 100%; /* Ensures the card takes up all the width of its container */
+  max-width: 960px; /* Limits max width for readability on very wide screens */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Subtle shadow for depth */
+}
+
+/* Responsive grid layout for form fields */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Spacing between grid items */
+  width: 100%; /* Full width to stretch inside the card */
+}
+
+/* Each form field takes full width of its grid column */
+.grid-item {
+  width: 100%;
+}
+
+/* Button styling for alignment and spacing */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  width: 100%; /* This ensures buttons stretch to the edges if needed */
+}
+
+/* Full width for all text inputs and textareas */
+textarea, input {
+  width: 100%;
+}
+
+/* Ensures mat-form-field takes all available space */
+mat-form-field {
+  width: 100%;
+}

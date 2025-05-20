@@ -1,0 +1,63 @@
+<mat-card
+  [ngClass]="selected && disableLink ? 'selected-card' : ''"
+  appearance="outlined"
+  class="announcement-card">
+  <div
+    [routerLink]="'/announcement/' + announcement.slug"
+    class="clickable-area">
+    <header class="header-section">
+      <p class="announcement-headline">{{ announcement.headline }}</p>
+      <button
+        *ngIf="adminPermission$ | async as isAdmin"
+        (click)="toggleAdminControls(); $event.stopPropagation()">
+        {{ showAdminControls ? 'Student View' : 'Admin View' }}
+      </button>
+    </header>
+    <section class="content-section">
+      <p class="announcement-synopsis description-text">
+        {{ announcement.synopsis }}
+      </p>
+    </section>
+    <div class="announcement-section announcement-image-container">
+      <img
+        [src]="announcement.image"
+        (error)="onImageError($event)"
+        alt="Announcement Image" />
+    </div>
+  </div>
+  <footer class="modify-buttons">
+    <div class="times-container">
+      <strong>Publish:</strong>
+      <p class="announcement-publish">
+        {{ announcement.publish | date: 'short' }}
+      </p>
+      <strong>Modify:</strong>
+      <p>{{ announcement.modification | date: 'short' }}</p>
+    </div>
+    <div
+      class="buttons-container"
+      *ngIf="(adminPermission$ | async) && showAdminControls">
+      <mat-form-field appearance="fill">
+        <mat-label>Change State</mat-label>
+        <mat-select
+          [(ngModel)]="announcement.state"
+          (click)="$event.stopPropagation()"
+          (selectionChange)="updateState(announcement)">
+          <mat-option value="Draft">Draft</mat-option>
+          <mat-option value="Published">Published</mat-option>
+          <mat-option value="Archived">Archived</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button
+        mat-stroked-button
+        (click)="editAnnouncement(); $event.stopPropagation()">
+        Edit
+      </button>
+      <button
+        mat-stroked-button
+        (click)="deleteAnnouncement(); $event.stopPropagation()">
+        Delete
+      </button>
+    </div>
+  </footer>
+</mat-card>

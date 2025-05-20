@@ -1,0 +1,191 @@
+button {
+    background-color: lightslategray;
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container {
+    padding-left: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width: 100%;
+    flex: 1;
+    overflow:hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    }
+    
+
+  .mat-mdc-card {
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .mat-card {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    padding: 16px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    height: 100%; 
+  }
+  
+  .mat-icon-button {
+    color: #666;
+  }
+
+  
+  .events-grid {
+    display: grid;
+    grid-template-columns: auto 560px;
+    margin-top: 4px;
+    row-gap: 15px;
+    column-gap: 24px;
+    width: inherit;
+    overflow:hidden;
+  }
+
+  .events-column {
+    position: sticky;
+    bottom: 24px;
+    top: 0px;
+    height: 73vh;
+  }
+  
+  .button-column {
+    background: #f5f5f5; 
+    border-radius: 8px;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .details-column {
+    right: 24px;
+    bottom: 24px;
+    top: 170px;
+    width: 548px;
+    height: 73vh;
+    overflow: -moz-hidden-unscrollable;
+  }
+  
+  .carousel-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width:100%;
+    flex: 1;
+    position: sticky;
+    height: 400px;
+    max-height: calc(100vh - 64px);
+  }
+  
+  .carousel-track {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width:100%;
+    
+  }
+
+  .announcement-card {
+    width: 100%; 
+    margin: 10px 0;
+  }
+  
+  .button-column {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns buttons to the top */
+    background: #f5f5f5; /* Example background */
+    border-radius: 8px;
+    padding: auto;
+    gap: 10px;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .parameter-bar {
+    padding: 24px 24px 0px 24px;
+    display: flex;
+    direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    z-index: 2;
+    position: sticky;
+    top: 64px;
+    background-color: #303030;
+  }
+  
+  .search-bar {
+    width: 100%;
+    border-radius: 100%;
+  }
+  
+  .date-range {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5vh !important;
+    align-items: center;
+    justify-content: space-between;
+    height: 6vh;
+  }
+  
+  .date-range-text {
+    font-size: large;
+    margin: 0;
+  }
+  
+  .date-display {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  
+  @media only screen and (max-width: 1100px) {
+    .events-grid {
+      grid-template-columns: auto 400px;
+    }
+  
+    .details-column {
+      width: 388px;
+    }
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .events-grid {
+      grid-template-columns: auto 300px;
+    }
+  
+    .details-column {
+      width: 288px;
+    }
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .events-grid {
+      grid-template-columns: auto 0;
+    }
+  
+    .details-column {
+      visibility: hidden;
+    }
+  }
+  
+  @media (prefers-color-scheme: light) {
+    .parameter-bar {
+      background-color: #fafafa;
+    }
+  }
+  

@@ -1,0 +1,55 @@
+<mat-card class="announcement-detail-card" *ngIf="announcement">
+  <div class="announcement-title-container">
+    <mat-card-title>{{ announcement.headline }}</mat-card-title>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="announcement-section" style="grid-area: synopsis">
+    <strong>Synopsis:</strong>
+    <p>{{ announcement.synopsis }}</p>
+  </div>
+
+  <div class="announcement-section" style="grid-area: story">
+    <strong>Main Story:</strong>
+    <p>{{ announcement.main_story }}</p>
+  </div>
+
+  <div class="announcement-section" style="grid-area: organization">
+    <strong>Organization:</strong>
+    <p>{{ announcement.organization }}</p>
+  </div>
+
+  <div class="announcement-section announcement-image-container">
+    <img
+      [src]="announcement.image"
+      (error)="onImageError($event)"
+      alt="Announcement Image" />
+  </div>
+  <footer class="footer">
+    <div class="times">
+      <div class="announcement-publish-time">
+        <strong>Publish:</strong>
+        <p>{{ announcement.publish | date: 'short' }}</p>
+      </div>
+      <div class="announcement-modify-time">
+        <strong>Modify:</strong>
+        <p>{{ announcement.modification | date: 'short' }}</p>
+      </div>
+    </div>
+    <div class="buttons-container" *ngIf="adminPermission$ | async">
+      <div class="buttons-container">
+        <button
+          mat-stroked-button
+          (click)="editAnnouncement(); $event.stopPropagation()">
+          Edit
+        </button>
+        <button
+          mat-stroked-button
+          (click)="deleteAnnouncement(); $event.stopPropagation()">
+          Delete
+        </button>
+      </div>
+    </div>
+  </footer>
+</mat-card>

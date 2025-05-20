@@ -1,0 +1,88 @@
+.announcement-detail-card {
+  margin: 20px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-areas:
+    'title title image'
+    'synopsis synopsis image'
+    'story story image'
+    'organization organization organization'
+    'footer footer footer';
+  grid-template-columns: 1fr 4fr 1fr;  
+  grid-template-rows: auto auto 1fr auto auto; 
+  grid-gap: 10px;
+  align-items: start;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.announcement-title-container {
+  grid-area: title;
+  justify-self: start;
+}
+
+.announcement-image-container img {
+  max-width: 100%; 
+  border-radius: 4px;
+}
+
+.announcement-organization-container {
+  grid-area: organization;
+  margin-top: 20px; /* Adjust this value to move 'Organization' down */
+}
+
+.announcement-section {
+  margin-top: 15px; /* Remove if you want less space between sections */
+  display: flex; /* Use flex to keep label and date on the same line */
+  align-items: center;
+}
+
+.announcement-section strong {
+  font-weight: 500;
+}
+
+img {
+  max-width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.times {
+  display: flex;
+  flex-direction: row; 
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+}
+
+.announcement-publish-time,
+.announcement-modify-time {
+  justify-self: start;
+  align-self: center;
+  margin-right: 16px; /* Add space between times if necessary */
+}
+
+/* Buttons container */
+.buttons-container {
+  grid-area: buttons;
+  display: flex;
+  justify-content: end;
+  align-self: center;
+}
+
+.announcement-publish-time, .announcement-modify-time {
+  grid-area: publish-modify;
+  justify-self: end; /* Align time information to the end (right side) */
+  align-self: center; /* Align time information to the bottom */
+}
+
+/* Style for buttons */
+.mat-stroked-button {
+  margin-right: 8px; /* Add space between buttons */
+}
